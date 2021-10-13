@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% block body_class %}template-blog{% endblock %}
+
+{% block content %}
+<article class="container masthead">
+    <div class="row">
+        <div class="text-center img-blog">
+        <div class="text-center img-blog">
+             {% image page.feed_image width-400 as img %}
+              <img src="{{ img.url }}" alt="{{ img.alt }}">
+        </div>
+    </div>
+    <div>
+        <div class="text-center">
+            <h1>{{ page.title }}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <p>
+            {{ page.body|richtext }}
+        </p>
+    </div>
+
+</article>
+{% endblock %}
+
