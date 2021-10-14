@@ -9,6 +9,15 @@ SECRET_KEY = 'django-insecure--($n124^5f%92l6w=939ea(2$@@^3dace40kq3uwu=$gh4pdsa
 # SECURITY WARNING: define the correct hosts in production!
 ALLOWED_HOSTS = ['*'] 
 
+INSTALLED_APPS = INSTALLED_APPS + [
+    'debug_toolbar'
+]
+
+MIDDLEWARE = MIDDLEWARE + [
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
+]
+
+INTERNAL_IPS = ['127.0.0.1']
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
