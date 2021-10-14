@@ -38,14 +38,13 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                     <li class="nav-item"><a class="nav-link me-lg-3" href="/blog-page">Noticias</a></li>
-                    <li class="nav-item"><a class="nav-link me-lg-3" href="#download">Download</a></li>
                 </ul>
-                <button class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" role="button" href="/agenda-tu-cita">
                     <span class="d-flex align-items-center">
                         <i class="bi-chat-text-fill me-2"></i>
-                        <span class="small">Send Feedback</span>
+                        <span class="small">Agenda tu cita</span>
                     </span>
-                </button>
+                </a>
             </div>
         </div>
     </nav>
@@ -53,6 +52,15 @@
         {% wagtailuserbar %}
 
         {% block content %}{% endblock %}
+                <!-- Footer-->
+        <footer class="bg-black text-center py-5">
+            <div class="container px-5">
+                <div class="text-white-50 small">
+                    <div class="mb-2">&copy; Pablo Martínez . All Rights Reserved.</div>
+                    <a href="https://github.com/pablopalillo">GitHub</a>
+                </div>
+            </div>
+        </footer>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/wagtail_demo.js' %}"></script>

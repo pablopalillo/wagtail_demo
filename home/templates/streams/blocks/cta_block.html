@@ -1,0 +1,16 @@
+{% load wagtailcore_tags %}
+<!-- Call to action section-->
+<section class="cta">
+    <div class="cta-content">
+        <div class="container px-5">
+            <h2 class="text-white display-1 lh-1 mb-4">{{ self.title }}</h2>
+            <h5 class="text-white display-5 lh-5 mb-4">{{ self.text }}</h5>
+
+            <a class="btn btn-outline-light py-3 px-4 rounded-pill"
+               href="{{ self.button_page.url }}"
+               target="_blank">
+                {{ self.button_text }}
+            </a>
+        </div>
+    </div>
+</section>
