@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% load static %}
+
+{% block body_class %}template-appointment{% endblock %}
+
+{% block content %}
+    <article class="masthead container">
+        <div class="text-center">
+            <h1>{{ page.title }}</h1>
+        </div>
+
+        <div class="row">
+            <p>
+                {{ page.intro|richtext }}
+            </p>
+        </div>
+        <div class="row">
+
+             <form action="{% pageurl page %}" method="POST">
+                 {% csrf_token %}
+                 {{ form.errors }}
+                 {% for field in form %}
+                    <div class="mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label_tag }}: </label>
+                        {% if field.id_for_label  == "id_fecha" %}
+                            <input type="datetime-local" id="{{ field.id_for_label }}" name="{{ field.html_name  }}" value="{{ field.value }}" required>
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    </div>
+                 {% endfor %}
+
+                 <div>
+                     <input type="submit" class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" value="Agendar">
+                 </div>
+             </form>
+         </div>
+    </article>
+{% endblock %}
